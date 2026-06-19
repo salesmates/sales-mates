@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SalesMates | Vendas, Prospecção e Crescimento Comercial</title>
+
+  <meta name="description" content="A SalesMates ajuda empresas a venderem mais com estratégia comercial, prospecção ativa, qualificação de leads e processos de vendas mais inteligentes." />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050505;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(192, 192, 192, 0.16);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #c7c7c7;
+      font-weight: 300;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      color: #b9b9b9;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 26px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ffffff, #a9a9a9);
+      color: #050505;
+      box-shadow: 0 12px 40px rgba(255, 255, 255, 0.16);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 55px rgba(255, 255, 255, 0.24);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255, 255, 255, 0.24);
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.09);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      position: relative;
+      padding: 115px 0 95px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(192, 192, 192, 0.12);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      right: -220px;
+      top: -260px;
+      background: radial-gradient(circle, rgba(255,255,255,0.20), rgba(255,255,255,0.04), transparent 62%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      left: -220px;
+      bottom: -230px;
+      background: radial-gradient(circle, rgba(160,160,160,0.18), rgba(160,160,160,0.04), transparent 62%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #d6d6d6;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #cfcfcf;
+      box-shadow: 0 0 16px rgba(255,255,255,0.8);
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -3.5px;
+      margin-bottom: 26px;
+      color: #ffffff;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff, #8d8d8d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #bdbdbd;
+      max-width: 650px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .mini-proof {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      color: #ababab;
+      font-size: 14px;
+    }
+
+    .mini-proof strong {
+      display: block;
+      color: #ffffff;
+      font-size: 22px;
+      margin-bottom: 2px;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.45);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      color: #cfcfcf;
+      font-size: 14px;
+    }
+
+    .status {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .metric {
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.10);
+      margin-bottom: 16px;
+    }
+
+    .metric small {
+      color: #9b9b9b;
+      font-size: 13px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 34px;
+      color: #ffffff;
+      margin: 4px 0;
+    }
+
+    .bar {
+      height: 8px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ffffff, #8b8b8b);
+    }
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin-bottom: 48px;
+    }
+
+    .eyebrow {
+      color: #c8c8c8;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      color: #ffffff;
+      margin-bottom: 18px;
+    }
+
+    .section-title p {
+      color: #b8b8b8;
+      font-size: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .box {
+      background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.025));
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 26px;
+      padding: 30px;
+      transition: 0.25s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.28);
+      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.035));
+    }
+
+    .box-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffffff, #9e9e9e);
+      color: #050505;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .box h3 {
+      font-size: 22px;
+      color: #ffffff;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .box p {
+      color: #b3b3b3;
+      font-size: 15.5px;
+    }
+
+    .pain-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .pain-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #c7c7c7;
+    }
+
+    .check {
+      color: #ffffff;
+      font-weight: 900;
+    }
+
+    .dark-silver {
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.12), transparent 34%), #080808;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .offer {
+      text-align: center;
+      padding: 68px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 30px 100px rgba(0,0,0,0.42);
+    }
+
+    .offer p {
+      color: #bdbdbd;
+      max-width: 720px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 18px;
+    }
+
+    .step {
+      position: relative;
+      padding: 26px 26px 26px 82px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 26px;
+      top: 26px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffffff, #9e9e9e);
+      color: #050505;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .step p {
+      color: #b5b5b5;
+    }
+
+    .faq {
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 20px;
+      padding: 22px 24px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 17px;
+    }
+
+    details p {
+      margin-top: 14px;
+      color: #b8b8b8;
+    }
+
+    .final-cta {
+      text-align: center;
+      padding: 90px 0;
+      background: linear-gradient(180deg, #050505, #101010);
+      border-top: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .final-cta h2 {
+      max-width: 780px;
+      margin: 0 auto 18px;
+    }
+
+    .final-cta p {
+      color: #b8b8b8;
+      max-width: 660px;
+      margin: 0 auto 32px;
+      font-size: 18px;
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      color: #8d8d8d;
+      font-size: 14px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 82px 0 72px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .offer {
+        padding: 42px 24px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">Sales<span>Mates</span></a>
+
+      <nav class="nav-links">
+        <a href="#problema">Problema</a>
+        <a href="#solucao">Solução</a>
+        <a href="#processo">Processo</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a href="#contato" class="btn btn-primary">Quero vender mais</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Estratégia comercial para empresas que querem crescer
+          </div>
+
+          <h1>
+            Venda mais com um comercial que
+            <span class="gradient-text">não depende de sorte.</span>
+          </h1>
+
+          <p>
+            A SalesMates ajuda empresas a gerar mais oportunidades, organizar o processo comercial
+            e transformar conversas em clientes com estratégia, prospecção e acompanhamento.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contato" class="btn btn-primary">Receber diagnóstico gratuito</a>
+            <a href="#solucao" class="btn btn-secondary">Ver como funciona</a>
+          </div>
+
+          <div class="mini-proof">
+            <div>
+              <strong>+ Leads</strong>
+              Oportunidades qualificadas
+            </div>
+            <div>
+              <strong>+ Processo</strong>
+              Comercial organizado
+            </div>
+            <div>
+              <strong>+ Vendas</strong>
+              Foco em resultado
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="card-top">
+            <span>Performance Comercial</span>
+            <span class="status">Em crescimento</span>
+          </div>
+
+          <div class="metric">
+            <small>Oportunidades comerciais</small>
+            <strong>Alta previsibilidade</strong>
+            <div class="bar"><span style="width: 86%;"></span></div>
+          </div>
+
+          <div class="metric">
+            <small>Follow-up e cadência</small>
+            <strong>Mais controle</strong>
+            <div class="bar"><span style="width: 78%;"></span></div>
+          </div>
+
+          <div class="metric">
+            <small>Conversas qualificadas</small>
+            <strong>Mais intenção</strong>
+            <div class="bar"><span style="width: 92%;"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problema">
+      <div class="container grid-2">
+        <div class="section-title">
+          <div class="eyebrow">O problema</div>
+          <h2>Se a venda depende só de indicação, ela não é previsível.</h2>
+          <p>
+            Empresas que vendem no improviso perdem oportunidades todos os dias.
+            O crescimento precisa de método, rotina e acompanhamento.
+          </p>
+        </div>
+
+        <div class="pain-list">
+          <div class="pain-item"><span class="check">✓</span> Você depende demais de indicação para vender?</div>
+          <div class="pain-item"><span class="check">✓</span> Tem dificuldade para gerar leads qualificados?</div>
+          <div class="pain-item"><span class="check">✓</span> Recebe contatos, mas poucos viram clientes?</div>
+          <div class="pain-item"><span class="check">✓</span> Perde vendas por falta de follow-up?</div>
+          <div class="pain-item"><span class="check">✓</span> Não tem clareza do funil comercial?</div>
+          <div class="pain-item"><span class="check">✓</span> Quer vender mais, mas não sabe por onde começar?</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solucao" class="dark-silver">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">A solução</div>
+          <h2>A SalesMates estrutura o caminho entre o lead e a venda.</h2>
+          <p>
+            Atuamos nos pontos que fazem uma operação comercial sair do improviso
+            e começar a gerar oportunidades com mais consistência.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="box">
+            <div class="box-number">1</div>
+            <h3>Estratégia comercial</h3>
+            <p>Definimos o posicionamento, abordagem e caminhos para gerar oportunidades com mais clareza.</p>
+          </div>
+
+          <div class="box">
+            <div class="box-number">2</div>
+            <h3>Prospecção ativa</h3>
+            <p>Criamos ações para chegar nos clientes certos, com mensagens melhores e maior intenção comercial.</p>
+          </div>
+
+          <div class="box">
+            <div class="box-number">3</div>
+            <h3>Qualificação de leads</h3>
+            <p>Ajudamos a separar curiosos de oportunidades reais, priorizando quem tem maior chance de comprar.</p>
+          </div>
+
+          <div class="box">
+            <div class="box-number">4</div>
+            <h3>Scripts e abordagem</h3>
+            <p>Melhoramos a comunicação para tornar o atendimento mais direto, profissional e persuasivo.</p>
+          </div>
+
+          <div class="box">
+            <div class="box-number">5</div>
+            <h3>CRM e organização</h3>
+            <p>Estruturamos o funil comercial para que nenhuma oportunidade se perca no caminho.</p>
+          </div>
+
+          <div class="box">
+            <div class="box-number">6</div>
+            <h3>Follow-up e indicadores</h3>
+            <p>Criamos rotina de acompanhamento para aumentar conversões e entender onde a venda trava.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="offer">
+          <div class="eyebrow">Oferta inicial</div>
+          <h2>Receba um diagnóstico comercial gratuito.</h2>
+          <p>
+            Em uma conversa rápida, entendemos como sua empresa vende hoje,
+            onde estão os gargalos e quais ações podem gerar resultado mais rápido.
+          </p>
+
+          <a href="mailto:contato@salesmates.com.br?subject=Quero%20um%20diagnóstico%20comercial&body=Olá,%20vim%20pela%20landing%20page%20da%20SalesMates%20e%20quero%20entender%20como%20vocês%20podem%20ajudar%20minha%20empresa%20a%20vender%20mais." class="btn btn-primary">
+            Solicitar diagnóstico
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="processo">
+      <div class="container grid-2">
+        <div class="section-title">
+          <div class="eyebrow">Como funciona</div>
+          <h2>Um processo simples para vender com mais estratégia.</h2>
+          <p>
+            Nada de achismo. Primeiro entendemos o cenário, depois criamos o plano
+            e então ajustamos o comercial para gerar mais oportunidades.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <h3>Diagnóstico</h3>
+            <p>Analisamos o momento atual da empresa, canais de aquisição, atendimento e funil comercial.</p>
+          </div>
+
+          <div class="step">
+            <h3>Estratégia</h3>
+            <p>Definimos quais ações fazem mais sentido para gerar leads, reuniões e propostas.</p>
+          </div>
+
+          <div class="step">
+            <h3>Execução</h3>
+            <p>Aplicamos melhorias em prospecção, abordagem, CRM, follow-up e rotina comercial.</p>
+          </div>
+
+          <div class="step">
+            <h3>Otimização</h3>
+            <p>Acompanhamos indicadores e ajustamos o processo para aumentar a taxa de conversão.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-silver">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Para quem é</div>
+          <h2>Ideal para empresas que querem mais clientes e menos improviso.</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="box">
+            <h3>Empresas B2B</h3>
+            <p>Negócios que vendem para outras empresas e precisam gerar reuniões qualificadas.</p>
+          </div>
+
+          <div class="box">
+            <h3>Prestadores de serviço</h3>
+            <p>Empresas que precisam transformar autoridade e relacionamento em oportunidades comerciais.</p>
+          </div>
+
+          <div class="box">
+            <h3>Operações em crescimento</h3>
+            <p>Times que já vendem, mas querem processo, previsibilidade e melhoria de conversão.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container grid-2">
+        <div class="section-title">
+          <div class="eyebrow">FAQ</div>
+          <h2>Perguntas frequentes</h2>
+          <p>
+            Algumas dúvidas comuns antes de solicitar o diagnóstico comercial.
+          </p>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>A SalesMates garante vendas?</summary>
+            <p>
+              Não prometemos resultado mágico ou garantido. O trabalho é estruturar estratégias,
+              processos e ações comerciais para aumentar oportunidades e melhorar conversões.
+            </p>
+          </details>
+
+          <details>
+            <summary>Preciso ter equipe comercial?</summary>
+            <p>
+              Não necessariamente. Podemos ajudar empresas que já têm time comercial
+              e também negócios que ainda vendem de forma mais manual.
+            </p>
+          </details>
+
+          <details>
+            <summary>Vocês atendem empresas de quais segmentos?</summary>
+            <p>
+              A SalesMates é indicada principalmente para empresas de serviços,
+              soluções B2B e negócios que precisam gerar mais oportunidades comerciais.
+            </p>
+          </details>
+
+          <details>
+            <summary>Como começo?</summary>
+            <p>
+              Solicite o diagnóstico inicial. Depois entendemos seu cenário e indicamos
+              os próximos passos para melhorar sua operação comercial.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <h2>Pronto para transformar seu comercial em uma máquina de oportunidades?</h2>
+        <p>
+          Pare de esperar o cliente aparecer. Comece a construir um processo comercial
+          com estratégia, clareza e foco em crescimento.
+        </p>
+
+        <a href="mailto:contato@salesmates.com.br?subject=Quero%20vender%20mais%20com%20a%20SalesMates&body=Olá,%20quero%20falar%20com%20a%20SalesMates%20para%20entender%20como%20posso%20vender%20mais." class="btn btn-primary">
+          Quero vender mais com a SalesMates
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <span>© 2026 SalesMates. Todos os direitos reservados.</span>
+      <span>Estratégia comercial, prospecção e crescimento.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
