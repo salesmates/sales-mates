@@ -13,6 +13,7 @@
     a { text-decoration: none; color: inherit; }
     .container { width: min(1180px, 92%); margin: 0 auto; }
     
+    /* HEADER */
     header { position: sticky; top: 0; z-index: 1000; background: rgba(5, 5, 5, 0.88); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(192, 192, 192, 0.16); }
     .nav { height: 82px; display: flex; align-items: center; justify-content: space-between; }
     .logo { font-size: 24px; font-weight: 800; letter-spacing: -0.8px; color: #ffffff; }
@@ -20,13 +21,14 @@
     .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; color: #b9b9b9; }
     .nav-links a:hover { color: #ffffff; }
     
+    /* BOTÕES */
     .btn { display: inline-flex; align-items: center; justify-content: center; padding: 15px 26px; border-radius: 999px; font-weight: 700; font-size: 15px; transition: 0.25s ease; border: 1px solid transparent; cursor: pointer; }
     .btn-primary { background: linear-gradient(135deg, #ffffff, #a9a9a9); color: #050505; box-shadow: 0 12px 40px rgba(255, 255, 255, 0.16); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 55px rgba(255, 255, 255, 0.24); }
     .btn-secondary { border-color: rgba(255, 255, 255, 0.24); color: #ffffff; background: rgba(255, 255, 255, 0.04); }
     .btn-secondary:hover { background: rgba(255, 255, 255, 0.09); transform: translateY(-2px); }
 
-    /* Nova Hero Ajustada para Treinamento */
+    /* SEÇÃO 1: HERO */
     .hero { position: relative; padding: 115px 0 95px; overflow: hidden; border-bottom: 1px solid rgba(192, 192, 192, 0.12); }
     .hero::before { content: ""; position: absolute; width: 700px; height: 700px; right: -220px; top: -260px; background: radial-gradient(circle, rgba(255,255,255,0.15), rgba(255,255,255,0.02), transparent 62%); pointer-events: none; }
     
@@ -44,7 +46,7 @@
     .mini-proof { display: flex; gap: 28px; flex-wrap: wrap; color: #ababab; font-size: 14px; }
     .mini-proof strong { display: block; color: #ffffff; font-size: 18px; margin-bottom: 4px; }
 
-    /* Card do lado direito imitando o processo das imagens */
+    /* CARD HERO DIREITA */
     .hero-card { background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: 32px; box-shadow: 0 30px 90px rgba(0,0,0,0.5); }
     .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; color: #cfcfcf; font-size: 14px; }
     .status { padding: 5px 12px; border-radius: 999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); font-size: 12px; font-weight: bold;}
@@ -57,16 +59,43 @@
     .step-title { font-size: 18px; font-weight: bold; color: #fff; }
     .process-step p { font-size: 14px; color: #9b9b9b; margin-left: 40px; }
 
+    /* SEÇÃO 2: OS 6 PILARES (ESTRUTURA) */
+    .estrutura { padding: 110px 0; background: #050505; }
+    .estrutura-header { max-width: 800px; margin-bottom: 60px; }
+    .estrutura-header h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 20px; color: #ffffff; }
+    .estrutura-header p { font-size: 18px; color: #9b9b9b; line-height: 1.6; }
+
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    
+    .pilar-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 36px 30px; transition: all 0.3s ease; }
+    .pilar-card:hover { transform: translateY(-5px); border-color: rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.05); }
+    
+    .pilar-num { width: 34px; height: 34px; border-radius: 50%; background: #e2e2e2; color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; margin-bottom: 24px; }
+    
+    .pilar-card h3 { font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 14px; letter-spacing: -0.5px; }
+    .pilar-card p { font-size: 15px; color: #8a8a8a; line-height: 1.6; }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 1024px) {
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       h1 { letter-spacing: -1.5px; }
+    }
+
+    @media (max-width: 650px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .pilar-card { padding: 30px 24px; }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- HEADER -->
   <header>
     <div class="container nav">
       <a href="#" class="logo">Sales<span>Mates</span></a>
@@ -80,6 +109,7 @@
   </header>
 
   <main>
+    <!-- SEÇÃO 1: HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div>
@@ -146,6 +176,63 @@
         </div>
       </div>
     </section>
+
+    <!-- SEÇÃO 2: OS 6 PILARES (ESTRUTURAÇÃO) -->
+    <section id="solucoes" class="estrutura">
+      <div class="container">
+        
+        <div class="estrutura-header">
+          <h2>A SalesMates estrutura o caminho entre o lead e a venda.</h2>
+          <p>Atuamos nos pontos que fazem uma operação comercial sair do improviso e começar a gerar oportunidades com mais consistência.</p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <div class="pilar-card">
+            <div class="pilar-num">1</div>
+            <h3>Estratégia comercial</h3>
+            <p>Definimos o posicionamento, abordagem e caminhos para gerar oportunidades com mais clareza.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="pilar-card">
+            <div class="pilar-num">2</div>
+            <h3>Prospecção ativa</h3>
+            <p>Criamos ações para chegar nos clientes certos, com mensagens melhores e maior intenção comercial.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="pilar-card">
+            <div class="pilar-num">3</div>
+            <h3>Qualificação de leads</h3>
+            <p>Ajudamos a separar curiosos de oportunidades reais, priorizando quem tem maior chance de comprar.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="pilar-card">
+            <div class="pilar-num">4</div>
+            <h3>Scripts e abordagem</h3>
+            <p>Melhoramos a comunicação para tornar o atendimento mais direto, profissional e persuasivo.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="pilar-card">
+            <div class="pilar-num">5</div>
+            <h3>CRM e organização</h3>
+            <p>Estruturamos o funil comercial para que nenhuma oportunidade se perca no caminho.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="pilar-card">
+            <div class="pilar-num">6</div>
+            <h3>Follow-up e indicadores</h3>
+            <p>Criamos rotina de acompanhamento para aumentar conversões e entender onde a venda trava.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
   </main>
+  
 </body>
 </html>
