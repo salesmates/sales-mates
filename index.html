@@ -1,361 +1,378 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SalesMates | Ecossistema Completo de Vendas B2B</title>
-  <meta name="description" content="Da estruturação comercial à prospecção. Consultoria, Treinamento, Marketing e Software para escalar suas vendas." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalesMates - Estrutura Premium</title>
+    <style>
+        /* ================= RESET E BASE ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-  <style>
-    /* ================= GERAL ================= */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: Arial, Helvetica, sans-serif; background: #050505; color: #f5f5f5; line-height: 1.6; overflow-x: hidden; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-    .container { width: min(1180px, 92%); margin: 0 auto; }
-    
-    /* ================= HEADER ================= */
-    header { position: sticky; top: 0; z-index: 1000; background: rgba(5, 5, 5, 0.88); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(192, 192, 192, 0.16); }
-    .nav { height: 82px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-size: 24px; font-weight: 800; letter-spacing: -0.8px; color: #ffffff; }
-    .logo span { color: #c7c7c7; font-weight: 300; }
-    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; color: #b9b9b9; }
-    .nav-links a:hover { color: #ffffff; }
-    
-    /* ================= BOTÕES ================= */
-    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 15px 26px; border-radius: 999px; font-weight: 700; font-size: 15px; transition: 0.25s ease; border: 1px solid transparent; cursor: pointer; }
-    .btn-primary { background: linear-gradient(135deg, #ffffff, #a9a9a9); color: #050505; box-shadow: 0 12px 40px rgba(255, 255, 255, 0.16); }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 55px rgba(255, 255, 255, 0.24); }
-    .btn-secondary { border-color: rgba(255, 255, 255, 0.24); color: #ffffff; background: rgba(255, 255, 255, 0.04); }
-    .btn-secondary:hover { background: rgba(255, 255, 255, 0.09); transform: translateY(-2px); }
+        body {
+            background-color: #050505; /* Fundo escuro premium */
+            color: #ffffff;
+            line-height: 1.6;
+        }
 
-    /* ================= SEÇÃO 1: HERO ================= */
-    .hero { position: relative; padding: 115px 0 95px; overflow: hidden; border-bottom: 1px solid rgba(192, 192, 192, 0.12); }
-    .hero::before { content: ""; position: absolute; width: 700px; height: 700px; right: -220px; top: -260px; background: radial-gradient(circle, rgba(255,255,255,0.15), rgba(255,255,255,0.02), transparent 62%); pointer-events: none; }
-    .hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center; }
-    .badge { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: #d6d6d6; font-size: 13px; margin-bottom: 24px; }
-    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #cfcfcf; box-shadow: 0 0 16px rgba(255,255,255,0.8); }
-    h1 { font-size: clamp(40px, 5.5vw, 68px); line-height: 1.05; letter-spacing: -2.5px; margin-bottom: 26px; color: #ffffff; }
-    .gradient-text { background: linear-gradient(135deg, #ffffff, #8d8d8d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero p { font-size: 19px; color: #bdbdbd; max-width: 600px; margin-bottom: 34px; }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
-    
-    .hero-card { background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: 32px; box-shadow: 0 30px 90px rgba(0,0,0,0.5); }
-    .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; color: #cfcfcf; font-size: 14px; }
-    .status { padding: 5px 12px; border-radius: 999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); font-size: 12px; font-weight: bold;}
-    .process-step { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .process-step:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-    .step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-    .step-num { width: 28px; height: 28px; border-radius: 50%; background: #fff; color: #000; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 13px; }
-    .step-title { font-size: 18px; font-weight: bold; color: #fff; }
-    .process-step p { font-size: 14px; color: #9b9b9b; margin-left: 40px; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
 
-    /* ================= SEÇÃO 2: 6 PILARES ================= */
-    .section-padding { padding: 110px 0; border-bottom: 1px solid rgba(192, 192, 192, 0.12); }
-    .section-header { max-width: 800px; margin-bottom: 60px; }
-    .section-header h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 20px; color: #ffffff; }
-    .section-header p { font-size: 18px; color: #9b9b9b; line-height: 1.6; }
-    
-    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .pilar-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 36px 30px; transition: all 0.3s ease; }
-    .pilar-card:hover { transform: translateY(-5px); border-color: rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.05); }
-    .pilar-num { width: 34px; height: 34px; border-radius: 50%; background: #e2e2e2; color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; margin-bottom: 24px; }
-    .pilar-card h3 { font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 14px; }
-    .pilar-card p { font-size: 15px; color: #8a8a8a; line-height: 1.6; }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
 
-    /* ================= SEÇÃO 3: METODOLOGIA COMPLETA (TIMELINE) ================= */
-    .timeline { position: relative; max-width: 900px; margin: 0 auto; }
-    .timeline::before { content: ''; position: absolute; top: 0; left: 24px; height: 100%; width: 2px; background: rgba(255,255,255,0.1); }
-    
-    .timeline-item { position: relative; padding-left: 70px; margin-bottom: 50px; }
-    .timeline-item:last-child { margin-bottom: 0; }
-    .timeline-dot { position: absolute; left: 16px; top: 0; width: 18px; height: 18px; border-radius: 50%; background: #050505; border: 4px solid #ffffff; box-shadow: 0 0 10px rgba(255,255,255,0.3); }
-    
-    .timeline-content { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 30px; border-radius: 16px; }
-    .timeline-content h3 { font-size: 24px; color: #fff; margin-bottom: 10px; }
-    .timeline-content .phase-desc { color: #a1a1a1; margin-bottom: 20px; font-size: 16px; }
-    
-    .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-    .feature-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #cfcfcf; }
-    .feature-list li::before { content: '✓'; color: #fff; font-weight: bold; }
+        /* Botão Básico */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-    /* ================= SEÇÃO 4: ECOSSISTEMA E MARKETING ================= */
-    .marketing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .marketing-img { background: linear-gradient(45deg, #111, #222); border-radius: 20px; height: 400px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1); text-align: center; padding: 40px;}
-    .mkt-service { margin-bottom: 30px; }
-    .mkt-service h4 { font-size: 22px; color: #fff; margin-bottom: 8px; }
-    .mkt-service p { color: #8a8a8a; font-size: 15px; }
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-    /* ================= SEÇÃO 5: VL HUNT (SaaS) ================= */
-    .saas-section { background: #020202; position: relative; }
-    .saas-section::before { content: ""; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%); pointer-events: none;}
-    
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; position: relative; z-index: 2; }
-    .price-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 40px 30px; display: flex; flex-direction: column; }
-    .price-card.featured { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.06); transform: scale(1.03); }
-    
-    .plan-name { font-size: 20px; font-weight: bold; color: #fff; margin-bottom: 10px; }
-    .plan-desc { color: #8a8a8a; font-size: 14px; margin-bottom: 30px; height: 40px; }
-    .plan-features { margin-bottom: 40px; flex-grow: 1; }
-    .plan-features li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; color: #cfcfcf; display: flex; gap: 10px; }
-    .plan-features li::before { content: '✦'; color: #8d8d8d; }
-    .price-card .btn { width: 100%; }
+        .btn-secondary:hover {
+            background-color: #fff;
+            color: #000;
+        }
 
-    /* ================= RESPONSIVIDADE ================= */
-    @media (max-width: 1024px) {
-      .cards-grid, .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-      .price-card.featured { transform: scale(1); }
-    }
-    @media (max-width: 900px) {
-      .hero-grid, .marketing-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      h1 { letter-spacing: -1.5px; }
-      .feature-list { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 650px) {
-      .cards-grid, .pricing-grid { grid-template-columns: 1fr; }
-      .timeline::before { left: 14px; }
-      .timeline-item { padding-left: 40px; }
-      .timeline-dot { left: 6px; }
-    }
-  </style>
+        /* ================= 1. NOVO MÉTODO (TIMELINE) ================= */
+        .premium-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 100px auto; /* Margem inferior para separar da próxima seção */
+            padding-left: 40px;
+        }
+
+        .premium-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #444, #111);
+        }
+
+        .timeline-step {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-step:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(10px);
+        }
+
+        .step-number {
+            position: absolute;
+            left: -56px;
+            top: 30px;
+            width: 32px;
+            height: 32px;
+            background: #000;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #fff;
+            font-size: 14px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.2);
+        }
+
+        .timeline-step h4 {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .timeline-step p {
+            color: #a1a1a1;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* ================= 2. NOVA SEÇÃO MARKETING ================= */
+        .marketing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .marketing-content h2 {
+            font-size: 36px; 
+            line-height: 1.2; 
+            margin-bottom: 20px; 
+            color: #fff;
+        }
+
+        .marketing-content > p {
+            color: #a1a1a1; 
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        .mk-feature {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mk-feature:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .mk-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .mk-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: #fff;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .mk-text h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .mk-text p {
+            color: #a1a1a1;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Dashboard Mockup - Substitui a caixa preta */
+        .dashboard-mockup {
+            background: #0a0a0a;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dash-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .dash-dot { 
+            width: 12px; 
+            height: 12px; 
+            border-radius: 50%; 
+            background: #333; 
+        }
+        .dash-dot:nth-child(1) { background: #ff5f56; } /* Cores estilo macOS (opcional) */
+        .dash-dot:nth-child(2) { background: #ffbd2e; }
+        .dash-dot:nth-child(3) { background: #27c93f; }
+
+        .funnel-stage {
+            background: rgba(255,255,255,0.03);
+            height: 44px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            justify-content: space-between;
+            border: 1px solid rgba(255,255,255,0.02);
+            transition: all 0.3s;
+        }
+
+        .funnel-stage:hover {
+            transform: scale(1.02);
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        /* Barras do Funil */
+        .stage-1 { width: 100%; background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent); }
+        .stage-2 { width: 80%; background: linear-gradient(90deg, rgba(255,255,255,0.15), transparent); margin-left: 10%; }
+        .stage-3 { width: 60%; background: linear-gradient(90deg, rgba(255,255,255,0.2), transparent); margin-left: 20%; }
+        .stage-4 { width: 40%; margin-left: 30%; color: #000; background-color: #fff; border: none; font-weight: 700; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+
+        .floating-badge {
+            position: absolute;
+            top: 20px;
+            right: -10px;
+            background: #fff;
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .marketing-grid { grid-template-columns: 1fr; gap: 40px; }
+            .dashboard-mockup { margin-top: 20px; }
+            .premium-timeline { margin-left: 20px; }
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container nav">
-      <a href="#" class="logo">Sales<span>Mates</span></a>
-      <nav class="nav-links">
-        <a href="#solucoes">Estruturação</a>
-        <a href="#metodologia">Metodologia 360</a>
-        <a href="#marketing">Tráfego</a>
-        <a href="#vlhunt">VL Hunt</a>
-      </nav>
-      <a href="#contato" class="btn btn-primary">Falar com especialista</a>
+    <div class="container">
+        
+        <!-- SEÇÃO 1: MÉTODO (SUBSTITUI A PRIMEIRA FOTO) -->
+        <h2 class="section-title">Nosso Método Exclusivo</h2>
+        
+        <div class="premium-timeline">
+            <div class="timeline-step">
+                <div class="step-number">1</div>
+                <h4>Raio-X (Diagnóstico)</h4>
+                <p>Mapeamento profundo de gargalos, análise da cultura atual da empresa e identificação exata do perfil e das travas do seu time comercial.</p>
+            </div>
+
+            <div class="timeline-step">
+                <div class="step-number">2</div>
+                <h4>Capacitação Tática</h4>
+                <p>Esqueça a teoria genérica. Aplicamos treinamentos práticos, frameworks de qualificação e scripts adaptados 100% à realidade e ao produto do seu negócio.</p>
+            </div>
+
+            <div class="timeline-step">
+                <div class="step-number">3</div>
+                <h4>Sustentação e Escala</h4>
+                <p>Não abandonamos o barco. Acompanhamento rigoroso de métricas para garantir que o método seja aplicado no dia a dia e gere previsibilidade de receita.</p>
+            </div>
+        </div>
+
+
+        <!-- SEÇÃO 2: MARKETING + VENDAS (SUBSTITUI A SEGUNDA FOTO) -->
+        <div class="marketing-grid">
+            
+            <!-- Lado Esquerdo: Textos com SVGs Profissionais -->
+            <div class="marketing-content">
+                <h2>Não adianta um time afiado sem demanda qualificada.</h2>
+                <p>Além da estruturação e treinamento, nosso ecossistema oferece soluções completas de marketing B2B para abastecer seu funil diariamente.</p>
+
+                <div class="mk-feature">
+                    <div class="mk-icon">
+                        <!-- Ícone de Alvo/Tráfego (SVG Profissional e minimalista) -->
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                    </div>
+                    <div class="mk-text">
+                        <h4>Tráfego Pago B2B</h4>
+                        <p>Campanhas estratégicas no Google, LinkedIn e Meta Ads focadas exclusivamente em gerar leads com perfil de compra para sua equipe comercial.</p>
+                    </div>
+                </div>
+
+                <div class="mk-feature">
+                    <div class="mk-icon">
+                        <!-- Ícone de Site/Página (SVG Profissional e minimalista) -->
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    </div>
+                    <div class="mk-text">
+                        <h4>Landing Pages de Alta Conversão</h4>
+                        <p>Desenvolvemos páginas estruturadas com gatilhos mentais e design focado em transformar visitantes frios em reuniões agendadas.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px;">
+                    <a href="#" class="btn btn-secondary">Adicionar ao meu pacote</a>
+                </div>
+            </div>
+
+            <!-- Lado Direito: Mockup Visual de Funil (Substitui a caixa chata) -->
+            <div class="marketing-visual">
+                <div class="dashboard-mockup">
+                    <!-- Bolinhas estilo janela do navegador -->
+                    <div class="dash-header">
+                        <div class="dash-dot"></div>
+                        <div class="dash-dot"></div>
+                        <div class="dash-dot"></div>
+                    </div>
+                    
+                    <p style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; font-weight: 600;">Funil de Vendas - Performance</p>
+                    
+                    <!-- Barras do Funil -->
+                    <div class="funnel-stage stage-1">
+                        <span>Visitantes Únicos</span> 
+                        <span>12.450</span>
+                    </div>
+                    
+                    <div class="funnel-stage stage-2">
+                        <span>Leads Qualificados</span> 
+                        <span>3.120</span>
+                    </div>
+                    
+                    <div class="funnel-stage stage-3">
+                        <span>Reuniões Agendadas</span> 
+                        <span>485</span>
+                    </div>
+                    
+                    <div class="funnel-stage stage-4">
+                        <span style="color: #000;">Vendas Fechadas</span> 
+                        <span style="color: #000;">112</span>
+                    </div>
+                    
+                    <!-- Etiqueta Flutuante com Animação -->
+                    <div class="floating-badge">🔥 +34% de Conversão</div>
+                </div>
+            </div>
+
+        </div>
+        
     </div>
-  </header>
 
-  <main>
-    <!-- SEÇÃO 1: HERO (Mantida) -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="badge">
-            <span class="badge-dot"></span>
-            Treinamento e Consultoria Comercial
-          </div>
-          <h1>Treinamentos de vendas <span class="gradient-text">sob medida</span> para o seu time.</h1>
-          <p>Capacitamos sua equipe e reestruturamos seu processo comercial de ponta a ponta. Transforme sua operação com metodologias validadas e tecnologia.</p>
-          <div class="hero-actions">
-            <a href="#metodologia" class="btn btn-primary">Ver como funciona</a>
-            <a href="#vlhunt" class="btn btn-secondary">Conhecer Software</a>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="card-top">
-            <span>Método Exclusivo</span>
-            <span class="status">Foco em Resultados</span>
-          </div>
-          <div class="process-step">
-            <div class="step-header">
-              <span class="step-num">1</span><span class="step-title">Raio-X (Diagnóstico)</span>
-            </div>
-            <p>Mapeamento de gargalos, cultura e perfil do time.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-header">
-              <span class="step-num">2</span><span class="step-title">Capacitação</span>
-            </div>
-            <p>Treinamentos práticos adaptados ao seu negócio.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-header">
-              <span class="step-num">3</span><span class="step-title">Sustentação</span>
-            </div>
-            <p>Acompanhamento para garantir a aplicação no dia a dia.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEÇÃO 2: 6 PILARES (Mantida) -->
-    <section id="solucoes" class="section-padding">
-      <div class="container">
-        <div class="section-header">
-          <h2>A SalesMates estrutura o caminho entre o lead e a venda.</h2>
-          <p>Atuamos nos pontos que fazem uma operação comercial sair do improviso e começar a gerar oportunidades com mais consistência.</p>
-        </div>
-        <div class="cards-grid">
-          <div class="pilar-card"><div class="pilar-num">1</div><h3>Estratégia comercial</h3><p>Definimos o posicionamento, abordagem e caminhos para gerar oportunidades com clareza.</p></div>
-          <div class="pilar-card"><div class="pilar-num">2</div><h3>Prospecção ativa</h3><p>Criamos ações para chegar nos clientes certos, com mensagens de maior intenção comercial.</p></div>
-          <div class="pilar-card"><div class="pilar-num">3</div><h3>Qualificação de leads</h3><p>Ajudamos a separar curiosos de oportunidades reais, priorizando quem tem chance de comprar.</p></div>
-          <div class="pilar-card"><div class="pilar-num">4</div><h3>Scripts e abordagem</h3><p>Melhoramos a comunicação para tornar o atendimento mais direto, profissional e persuasivo.</p></div>
-          <div class="pilar-card"><div class="pilar-num">5</div><h3>CRM e organização</h3><p>Estruturamos o funil comercial para que nenhuma oportunidade se perca no caminho.</p></div>
-          <div class="pilar-card"><div class="pilar-num">6</div><h3>Follow-up e métricas</h3><p>Criamos rotina de acompanhamento para aumentar conversões e entender onde a venda trava.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- NOVA SEÇÃO 3: METODOLOGIA COMPLETA (Timeline) -->
-    <section id="metodologia" class="section-padding" style="background: #020202;">
-      <div class="container">
-        <div class="section-header" style="text-align: center; margin: 0 auto 60px;">
-          <h2>Nossa Metodologia de Implementação</h2>
-          <p>Um processo consultivo de ponta a ponta. Do diagnóstico profundo da sua operação até a calibração final dos resultados.</p>
-        </div>
-
-        <div class="timeline">
-          <!-- Fase 1 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Fase 1: Diagnóstico 360º & Quick Wins</h3>
-              <p class="phase-desc">Mergulhamos na cultura, missão e estrutura da sua empresa para entender exatamente onde o dinheiro está ficando na mesa.</p>
-              <ul class="feature-list">
-                <li>Análise de Cultura e Estrutura Comercial</li>
-                <li>Auditoria Prática de Atendimento</li>
-                <li>Avaliação do Sales Stack (Ferramentas)</li>
-                <li>Implementação de "Quick Wins" imediatos</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Fase 2 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Fase 2: Construção de Processos</h3>
-              <p class="phase-desc">Criamos a máquina. Desenhamos a jornada de compra, definimos seu Perfil de Cliente Ideal (ICP) e estruturamos os funis.</p>
-              <ul class="feature-list">
-                <li>Criação de Playbooks e Funis (Inbound/Outbound)</li>
-                <li>Estruturação de Cadências e Scripts</li>
-                <li>Dimensionamento da Equipe e Metas</li>
-                <li>Frameworks de Qualificação e Motivos de Lost</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Fase 3 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Fase 3: Capacitação do Time</h3>
-              <p class="phase-desc">A teoria vira prática. Treinamos sua equipe com base nos processos criados, garantindo que todos falem a mesma língua comercial.</p>
-              <ul class="feature-list">
-                <li>Avaliação de Gaps de Competência</li>
-                <li>Feedback individualizado (PDI)</li>
-                <li>Treinamento In Company ou Online</li>
-                <li>Análise de Calls (Opcional via IA)</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Fase 4 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Fase 4: Acompanhamento e Escala</h3>
-              <p class="phase-desc">Não entregamos um PDF e vamos embora. Acompanhamos a execução para garantir que a metodologia seja sustentada.</p>
-              <ul class="feature-list">
-                <li>Análise de Comportamento do Funil</li>
-                <li>Calibração de Ferramentas e Discursos</li>
-                <li>Coaching e Feedback Contínuo</li>
-                <li>Cultura de PDCA (Melhoria Contínua)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- NOVA SEÇÃO 4: GERAÇÃO DE DEMANDA (Marketing) -->
-    <section id="marketing" class="section-padding">
-      <div class="container marketing-grid">
-        <div>
-          <div class="section-header" style="margin-bottom: 40px;">
-            <h2>Não adianta um time afiado sem demanda qualificada.</h2>
-            <p>Além da estruturação e treinamento, nosso ecossistema oferece soluções completas de marketing B2B para abastecer seu funil.</p>
-          </div>
-          
-          <div class="mkt-service">
-            <h4>🎯 Tráfego Pago B2B</h4>
-            <p>Campanhas estratégicas no Google, LinkedIn e Meta Ads focadas exclusivamente em gerar leads com perfil de compra para sua equipe comercial.</p>
-          </div>
-          
-          <div class="mkt-service">
-            <h4>💻 Criação de Landing Pages e Sites</h4>
-            <p>Desenvolvemos páginas de alta conversão, estruturadas com gatilhos mentais e design focado em transformar visitantes em reuniões agendadas.</p>
-          </div>
-
-          <a href="#contato" class="btn btn-secondary" style="margin-top: 10px;">Adicionar ao meu pacote</a>
-        </div>
-        <div class="marketing-img">
-          <div>
-            <h3 style="color:#fff; font-size:28px; margin-bottom:10px;">Marketing + Vendas</h3>
-            <p style="color:#8a8a8a;">Sinergia total entre quem gera o lead e quem fecha o negócio.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- NOVA SEÇÃO 5: VL HUNT (SAAS) -->
-    <section id="vlhunt" class="section-padding saas-section">
-      <div class="container">
-        <div class="section-header" style="text-align: center; margin: 0 auto;">
-          <div class="badge" style="margin-bottom: 15px;">Software Proprietário</div>
-          <h2>Conheça o VL HUNT</h2>
-          <p>Nossa plataforma SaaS de prospecção inteligente. Estruture, automatize e escale suas cadências de vendas em um só lugar.</p>
-        </div>
-
-        <div class="pricing-grid">
-          <!-- Plano Starter -->
-          <div class="price-card">
-            <div class="plan-name">Starter</div>
-            <div class="plan-desc">Ideal para times enxutos iniciando a operação outbound.</div>
-            <ul class="plan-features">
-              <li>Gestão básica de contatos</li>
-              <li>Cadências de e-mail limitadas</li>
-              <li>Templates pré-aprovados</li>
-              <li>Suporte via email</li>
-            </ul>
-            <a href="#" class="btn btn-secondary">Assinar Starter</a>
-          </div>
-
-          <!-- Plano Pro -->
-          <div class="price-card featured">
-            <div class="plan-name">Pro</div>
-            <div class="plan-desc">Para operações estruturadas que buscam escala e previsibilidade.</div>
-            <ul class="plan-features">
-              <li>Tudo do Starter</li>
-              <li>Cadências multicanal ilimitadas</li>
-              <li>Integração nativa com CRM</li>
-              <li>Relatórios avançados de performance</li>
-              <li>Suporte prioritário</li>
-            </ul>
-            <a href="#" class="btn btn-primary">Assinar Pro</a>
-          </div>
-
-          <!-- Plano Corporate -->
-          <div class="price-card">
-            <div class="plan-name">Corporate</div>
-            <div class="plan-desc">Para grandes times com necessidades complexas de operação.</div>
-            <ul class="plan-features">
-              <li>Tudo do Pro</li>
-              <li>Onboarding e Setup dedicado</li>
-              <li>IPs dedicados para e-mail</li>
-              <li>Desenvolvimento de integrações customizadas</li>
-              <li>Gerente de sucesso (CS) dedicado</li>
-            </ul>
-            <a href="#" class="btn btn-secondary">Falar com consultor</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
 </body>
 </html>
