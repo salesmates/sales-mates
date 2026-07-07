@@ -73,7 +73,6 @@
     .logos-title { font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; font-weight: 600; }
     .logos-grid { display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap; }
     
-    /* Quando tiver as imagens reais, basta colocar a tag <img>. Por enquanto usamos texto estilizado */
     .logo-placeholder { font-size: 22px; font-weight: 800; color: #fff; opacity: 0.3; filter: grayscale(100%); transition: all 0.4s ease; cursor: default; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; }
     .logo-placeholder:hover { opacity: 1; filter: grayscale(0%); transform: scale(1.05); }
     .logo-placeholder svg { width: 24px; height: 24px; }
@@ -199,7 +198,8 @@
       <a href="#lps">Sites e LPs</a>
       <a href="#vlhunt">SAAS Prospecção</a>
     </nav>
-    <a href="#contato" class="btn btn-primary">Falar com especialista</a>
+    <!-- CTA Header (Abre Whatsapp em nova aba) -->
+    <a href="https://wa.me/55SEUNUMERO?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20SalesMates!" target="_blank" class="btn btn-primary">Falar com especialista</a>
   </div>
 </header>
 
@@ -215,8 +215,9 @@
       <h1>Treinamentos de vendas <span class="gradient-text">sob medida</span> para o seu time.</h1>
       <p>Capacitamos sua equipe e reestruturamos seu processo comercial de ponta a ponta. Transforme sua operação com metodologias validadas e tecnologia.</p>
       <div class="hero-actions">
+        <!-- Mantive a âncora para a seção de metodologia neste botão para navegação -->
         <a href="#metodologia" class="btn btn-primary">Ver como funciona</a>
-        <a href="#vlhunt" class="btn btn-secondary">Conhecer Software</a>
+        <!-- Botão "Conhecer Software" foi removido conforme solicitado -->
       </div>
     </div>
 
@@ -259,7 +260,6 @@
     <h3 class="logos-title">Empresas que escalam suas vendas com a SalesMates</h3>
     
     <div class="logos-grid">
-      <!-- PLACEHOLDERS DE LOGO (Substitua depois por tags <img> com as logos reais) -->
       <div class="logo-placeholder">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         Empresa Alpha
@@ -334,7 +334,8 @@
           <p>Estratégias multicanal desenhadas para interceptar quem já busca pelo seu serviço e despertar o desejo em quem tem o perfil de compra ideal.</p>
         </div>
       </div>
-      <a href="#contato" class="btn btn-secondary" style="width: fit-content; margin-top: 10px;">Falar sobre Tráfego</a>
+      <!-- Link para WhatsApp com texto pré-definido -->
+      <a href="https://wa.me/55SEUNUMERO?text=Olá,%20gostaria%20de%20falar%20sobre%20Tráfego%20Pago%20B2B!" target="_blank" class="btn btn-secondary" style="width: fit-content; margin-top: 10px;">Falar sobre Tráfego</a>
     </div>
     
     <div>
@@ -369,7 +370,8 @@
           <p>Desenvolvemos páginas rápidas, estruturadas com gatilhos mentais e copy persuasiva para transformar visitantes em reuniões agendadas na hora.</p>
         </div>
       </div>
-      <a href="#contato" class="btn btn-secondary" style="width: fit-content; margin-top: 10px;">Solicitar orçamento de Site</a>
+      <!-- Link para WhatsApp com texto pré-definido -->
+      <a href="https://wa.me/55SEUNUMERO?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20Criação%20de%20Site/Landing%20Page!" target="_blank" class="btn btn-secondary" style="width: fit-content; margin-top: 10px;">Solicitar orçamento de Site</a>
     </div>
 
     <!-- MOCKUP BROWSER LPs -->
@@ -412,19 +414,19 @@
         <div class="plan-name">Starter</div>
         <div class="plan-desc">Ideal para times enxutos iniciando a operação outbound.</div>
         <ul class="plan-features"><li>Gestão básica de contatos</li><li>Cadências de e-mail limitadas</li><li>Templates pré-aprovados</li><li>Suporte via email</li></ul>
-        <a href="#" class="btn btn-secondary">Assinar Starter</a>
+        <a href="https://wa.me/55SEUNUMERO?text=Olá,%20tenho%20interesse%20em%20assinar%20o%20plano%20Starter%20do%20VL%20HUNT!" target="_blank" class="btn btn-secondary">Assinar Starter</a>
       </div>
       <div class="price-card featured">
         <div class="plan-name">Pro</div>
         <div class="plan-desc">Para operações estruturadas que buscam escala e previsibilidade.</div>
         <ul class="plan-features"><li>Tudo do Starter</li><li>Cadências multicanal ilimitadas</li><li>Integração nativa com CRM</li><li>Relatórios de performance</li><li>Suporte prioritário</li></ul>
-        <a href="#" class="btn btn-primary">Assinar Pro</a>
+        <a href="https://wa.me/55SEUNUMERO?text=Olá,%20tenho%20interesse%20em%20assinar%20o%20plano%20PRO%20do%20VL%20HUNT!" target="_blank" class="btn btn-primary">Assinar Pro</a>
       </div>
       <div class="price-card">
         <div class="plan-name">Corporate</div>
         <div class="plan-desc">Para grandes times com necessidades complexas de operação.</div>
         <ul class="plan-features"><li>Tudo do Pro</li><li>Onboarding e Setup dedicado</li><li>IPs dedicados para e-mail</li><li>Integrações customizadas</li><li>Gerente de sucesso dedicado</li></ul>
-        <a href="#" class="btn btn-secondary">Falar com consultor</a>
+        <a href="https://wa.me/55SEUNUMERO?text=Olá,%20gostaria%20de%20falar%20com%20um%20consultor%20sobre%20o%20plano%20Corporate%20do%20VL%20HUNT!" target="_blank" class="btn btn-secondary">Falar com consultor</a>
       </div>
     </div>
   </div>
@@ -443,10 +445,10 @@
           O ecossistema definitivo para escalar as vendas B2B da sua empresa. Da estruturação e consultoria à captação de leads e software de prospecção.
         </p>
         <div class="social-links">
-          <!-- Ícones SVG genéricos para LinkedIn, Instagram e YouTube -->
-          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-          <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+          <!-- LINKS REAIS DAS REDES SOCIAIS AQUI -->
+          <a href="SEU_LINK_DO_LINKEDIN_AQUI" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+          <a href="SEU_LINK_DO_INSTAGRAM_AQUI" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="SEU_LINK_DO_YOUTUBE_AQUI" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
         </div>
       </div>
 
@@ -480,7 +482,8 @@
         <p class="footer-desc" style="font-size: 14px; margin-bottom: 16px;">
           Agende um diagnóstico gratuito e descubra os gargalos da sua operação.
         </p>
-        <a href="#contato" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px; width: 100%;">Agendar Diagnóstico</a>
+        <!-- Link de Diagnóstico via WhatsApp -->
+        <a href="https://wa.me/55SEUNUMERO?text=Olá,%20gostaria%20de%20agendar%20um%20diagnóstico%20gratuito%20da%20minha%20operação!" target="_blank" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px; width: 100%;">Agendar Diagnóstico</a>
       </div>
     </div>
 
