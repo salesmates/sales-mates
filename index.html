@@ -152,31 +152,45 @@
     .plan-features li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 15px; color: #ccc; display: flex; gap: 12px; align-items: center; }
     .plan-features li::before { content: '✓'; color: #fff; font-weight: bold; }
 
-    /* ================= RODAPÉ (FOOTER) ================= */
-    .site-footer { background: #020202; padding: 80px 0 30px; border-top: 1px solid rgba(255,255,255,0.08); }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 60px; }
-    
-    .footer-brand .logo { font-size: 28px; margin-bottom: 16px; display: inline-block; }
-    .footer-desc { color: #888; font-size: 15px; max-width: 320px; margin-bottom: 24px; line-height: 1.6; }
-    .social-links { display: flex; gap: 16px; }
-    .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; transition: 0.3s; }
-    .social-links a:hover { background: #fff; color: #000; transform: translateY(-3px); }
-    
-    .footer-heading { color: #fff; font-size: 16px; font-weight: 600; margin-bottom: 24px; letter-spacing: 0.5px; }
-    .footer-links { display: flex; flex-direction: column; gap: 14px; }
-    .footer-links a { color: #888; font-size: 15px; transition: 0.2s; }
-    .footer-links a:hover { color: #fff; transform: translateX(4px); }
-    
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; color: #666; font-size: 14px; }
-    .footer-bottom-links { display: flex; gap: 24px; }
-    .footer-bottom-links a:hover { color: #fff; }
-
+    /* ================= RESPONSIVIDADE (CELULARES E TABLETS) ================= */
     @media (max-width: 900px) {
+      /* Ajusta os Grids de 2 colunas para 1 coluna (um em cima do outro) */
+      .hero-grid, .marketing-grid { grid-template-columns: 1fr; gap: 50px; }
+      
+      /* Esconde os links do menu no celular para não quebrar o cabeçalho (deixa só a logo e o botão) */
+      .nav-links { display: none; }
+      
+      /* Ajustes de espaçamento para telas menores */
+      .hero { padding: 60px 0; }
+      .hero::before { right: -50%; top: -100px; }
+      
+      /* Ajustes da Timeline para caber na tela */
+      .premium-timeline { padding-left: 20px; }
+      .timeline-step { padding: 25px; }
+      .step-number-timeline { left: -25px; width: 28px; height: 28px; font-size: 13px; top: 25px; }
+      .feature-list { grid-template-columns: 1fr; } /* Lista da timeline em 1 coluna */
+      
+      /* Ajuste do rodapé */
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
       .footer-brand { grid-column: span 2; }
       .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
     }
+
     @media (max-width: 600px) {
+      /* Ajusta os cards de pilar e preço para não vazarem da tela */
+      .cards-grid, .pricing-grid { grid-template-columns: 1fr; }
+      
+      /* Diminui a logo e o botão do topo para caberem lado a lado no celular */
+      .sub-logo { display: none; } /* Esconde o "Assessoria Comercial" no celular */
+      .logo { font-size: 20px; }
+      .nav .btn { padding: 10px 16px; font-size: 12px; }
+      
+      /* Ajustes nos mockups (telas falsas) para não quebrarem o tamanho */
+      .dashboard-mockup { padding: 15px; }
+      .funnel-stage { padding: 0 10px; font-size: 11px; flex-direction: column; align-items: flex-start; justify-content: center; height: auto; padding-top: 8px; padding-bottom: 8px; }
+      .floating-badge { right: 10px; top: 10px; font-size: 10px; }
+      
+      /* Rodapé em 1 coluna */
       .footer-grid { grid-template-columns: 1fr; }
       .footer-brand { grid-column: span 1; }
     }
